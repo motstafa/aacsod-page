@@ -1,7 +1,12 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    color: #092140
 }
 
 html {
@@ -9,7 +14,8 @@ html {
 }
 
 body {
-    font-family: "open Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
+    background-color: #F5F6F9;
 }
 
 ul {
@@ -22,16 +28,30 @@ ul {
     padding-left: 20px;
     padding-right: 20px;
     color: #092140;
+
+    @media  screen and (min-width: 640px) {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+
+    @media  screen and (min-width: 640px) {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
 }
 
 .aacsod-header {
     position: relative;
-    background-image: url('../aacsod/AACSOD-header.png');
+    background-image: url('/assets/AACSOD-header.png');
     width: 100%;
-    height: 300px;
+    height: 207px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+    @media screen and (min-width: 640px) {
+        height: 300px;
+    }
 }
 
 
@@ -45,32 +65,47 @@ ul {
 }
 
 .aacsod-title {
-    color: #092140;
-    font-weight: 800;
-    font-size: 3em;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1.1px;
+    font-size: 12px;
     position: absolute;
-    padding: 30px;
+    padding: 22px 29px;
     background-color: #3ABA83;
     border-radius: 0 35px 35px 0;
-    bottom: -64px;
+    bottom: -36px;
     left: 0;
+
+    @media screen and (min-width: 640px) {
+        font-size: 29px;
+    }
 }
 
 .aacsod-content {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     padding-top: 102px;
+
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+        gap: 30px;
+    }
 }
 
 
 .aacsod-content-left-title p.first {
     text-align: left;
     font-weight: 400;
-    font-size: 28px;
+    font-size: 20px;
+
+    @media  screen and (min-width: 640px) {
+        font-size: 25px;
+    }
 }
 
 .aacsod-content-left-title p.first span {
-    font-weight: 900;
+    font-weight: 600;
 }
 
 
@@ -115,9 +150,10 @@ ul {
 }
 
 .aacsod-content-right {
-    border: #3ABA83 3px solid;
+    border: #3ABA83 2px solid;
     padding: 10px 20px;
-    flex-basis: 29%;
+    width: 313px;
+    border-radius: 5px;
 }
 
 .aacsod-content-right ul li .details {
@@ -141,10 +177,10 @@ ul {
 .aacsod-content-right ul li::before {
     content: "";
     width: 20%;
-    height: 3px;
+    height: 4px;
     background-color: #3ABA83;
     position: absolute;
-    bottom: -18px;
+    bottom: -7px;
     left: 0;
     margin: 0 auto
 }
@@ -152,12 +188,12 @@ ul {
 
 .aacsod-content-right ul li>p {
     font-weight: 900;
-    font-size: 18px;
+    font-size: 18px; 
 }
 
 
 .aacsod-content-right ul li .details p {
-    font-weight: 200;
+    font-weight: 300;
 }
 
 .aacsod-content-right .aacsod-sponsor {
@@ -172,13 +208,15 @@ ul {
 
 
 .aacsod-content-right .aacsod-sponsor p {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 17px;
+    margin-bottom: -7px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.1px;
 }
 
 .aacsod-content-right .aacsod-sponsor img {
-    width: 250px;
-    height: 64px;
+    width: 200px;
 }
 
 .theme {
@@ -187,45 +225,81 @@ ul {
 
 .theme .intro {
     display: flex;
+    flex-direction: column;
     margin-bottom: 0px;
     margin-top: 60px;
+
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+        padding-left: 30px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        gap: 30px
+    }
 }
 
-
 .theme .intro div {
-    padding: 100px 100px 100px 0;
     font-size: 20px;
     word-spacing: 7px;
     text-align: justify;
+    padding: 18px;
+    order: 2;
+
+    @media screen and (min-width: 640px) {
+        order: 1
+    }    
+}
+
+.theme .intro p {
+    line-height: 26px;
+    font-size: 17px;
 }
 
 .theme .intro img {
     flex-basis: 50%;
     width: 500px;
     height: 500px;
+    order: 1;
+    margin: auto;
+
+    @media screen and (min-width: 640px) {
+        order: 2
+    } 
 }
 
 .theme .approach {
     position: relative;
     background-color: #3ABA83;
-    padding: 35px;
+    padding: 50px 60px 50px 60px;
 }
 
-.theme .approach h1 {
+.theme .approach h2 {
     font-size: 2em;
     font-weight: 900;
+    line-height: 1;
+    text-align: center;
+
+    @media  screen and (min-width: 640px) {
+        text-align: start;
+    }
 }
 
 .theme .approach p {
     color: white;
     margin-top: 20px;
+    max-width: 1000px;
+    line-height: 24px;
+    letter-spacing: .5px;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .theme .approach::after {
     content: "";
     position: absolute;
-    width: 18%;
-    height: 100%;
+    width: 182px;
+    height: 272px;
     top: -120px;
     right: -95px;
     background-color: #092140;
@@ -234,10 +308,15 @@ ul {
 
 .theme .theme-text {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin-top: 60px;
     margin-bottom: 60px;
+
+    @media screen and (min-width: 640px) {
+        flex-direction: row;
+    }
 }
 
 .theme .theme-text .left,
@@ -261,14 +340,14 @@ ul {
 }
 
 .countries {
-    margin-top: 100px
+    margin-top: 50px
 }
 
 .countries .title {
     display: flex;
     gap: 10px;
     align-items: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 
@@ -287,40 +366,116 @@ ul {
 .countries .second-image {
     display: block;
     margin: auto;
+    max-width: 100%;
 }
 
 .countries .content {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (min-width: 640px) {
+        flex-direction: row;
+    }
 }
 
+.countries .content img {
+    max-width: 100%;
+}
 
 .countries .content ul {
-    max-width: 40%;
-}
-
-.countries .content ul li {
-    margin-bottom: 20px;
-}
-
-
-.courses .title {
     display: flex;
+    flex-direction: column;
+    gap: 19px;
+    max-width: 100%;
+    text-align: center;
+
+    @media screen and (min-width: 640px) {
+        max-width: 40%;
+        text-align: start;
+    }
+}
+
+.countries .content ul li h3 {
+    margin-bottom: 4px;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.countries .content ul li p {
+    font-size: 15px;
+    color: #676767;
+    line-height: 21px;
+    letter-spacing: -0.1px;
+}
+
+.courses-title {
+    display: flex;
+    flex-direction: row;
     gap: 10px;
     align-items: center;
-    margin-bottom: 100px;
-    margin-top: 100px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 12px;
+
+    @media screen and (min-width: 640px) {
+        flex-direction: row;
+        margin-bottom: 50px;
+        margin-top: 50px;
+        font-size: unset;
+    }
 }
 
-.courses .title img {
+.courses-title img {
     width: 80px;
     height: 80px;
 }
 
-.courses .title h1 {
+.courses-title h2 {
     font-size: 2em;
     font-weight: 900;
     text-transform: capitalize;
     letter-spacing: 1px;
 }
+
+/* start courses section */
+.courses-items-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    @media screen and (min-width: 640px) {
+        justify-content: flex-start;
+    }
+}
+/* hover:!border-[#45808E] hover:bg-white hover:shadow-lg"> */
+
+.course-card {
+ width: 300px;
+ min-height: 350px;
+ border-radius: 3px;
+ overflow: hidden;
+ display: flex;
+ flex-direction: column;
+ border-width: 1.3px;
+ border-style: solid;
+ border-color: #ddd;
+ /* transition: all 300 ease-in-out; */
+}
+.course-card img {
+    width: 100%;
+}
+.course-card .view-course-link {
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+}
+.course-card .card-title {
+    text-align: center;
+    margin-top: 9px;
+}
+/* end courses section */
